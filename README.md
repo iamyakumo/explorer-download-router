@@ -1,4 +1,6 @@
-# 下载路径助手 (Download Router)
+# 浏览器下载路径助手 (Download Router)
+
+![界面预览](screenshot.png)
 
 一个 Chrome 扩展：让**指定网站**下载的文件自动保存到默认下载目录下的**指定子文件夹**，其他网站不受影响。
 
