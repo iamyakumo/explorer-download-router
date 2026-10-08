@@ -1,0 +1,8 @@
+# 备份文件
+*.bak
+
+# 系统 / 编辑器文件
+Thumbs.db
+Desktop.ini
+.DS_Store
+*.log

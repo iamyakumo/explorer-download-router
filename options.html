@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <title>下载路径助手 - 设置</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      font-family: "Segoe UI", "Microsoft YaHei", sans-serif;
+      max-width: 720px;
+      margin: 32px auto;
+      padding: 0 20px;
+      color: #222;
+    }
+    h1 { font-size: 20px; margin-bottom: 4px; }
+    .tip { color: #666; font-size: 13px; margin-bottom: 20px; line-height: 1.7; }
+    table { width: 100%; border-collapse: collapse; margin-bottom: 16px; }
+    th, td { padding: 8px 10px; border-bottom: 1px solid #e5e5e5; text-align: left; font-size: 14px; }
+    th { background: #f7f7f7; font-weight: 600; }
+    input[type="text"] {
+      width: 100%; padding: 6px 8px; font-size: 14px;
+      border: 1px solid #ccc; border-radius: 6px;
+    }
+    button {
+      padding: 6px 14px; font-size: 14px; border: none; border-radius: 6px;
+      cursor: pointer; background: #1a73e8; color: #fff;
+    }
+    button.del { background: #eee; color: #c00; }
+    button:hover { opacity: 0.9; }
+    .row-new td { background: #fafcff; }
+    .status { font-size: 13px; color: #1a7f37; margin-left: 12px; }
+    code { background: #f0f0f0; padding: 1px 5px; border-radius: 4px; font-size: 12px; }
+  </style>
+</head>
+<body>
+  <h1>下载路径助手</h1>
+  <p class="tip">
+    为每个网站指定一个子文件夹，该网站下载的文件会自动保存到
+    <code>默认下载目录 / 子文件夹</code> 中；未匹配的网站不受影响。<br>
+    网站域名支持通配：填 <code>example.com</code> 会同时匹配其子域名；
+    填 <code>*.example.com</code> 仅匹配子域名。文件夹支持多级，如 <code>工作/报表</code>。
+  </p>
+
+  <table>
+    <thead>
+      <tr><th style="width:40%">网站域名</th><th style="width:40%">子文件夹</th><th></th></tr>
+    </thead>
+    <tbody id="rule-list"></tbody>
+    <tbody>
+      <tr class="row-new">
+        <td><input type="text" id="new-pattern" placeholder="例如：example.com" /></td>
+        <td><input type="text" id="new-folder" placeholder="例如：工作资料" /></td>
+        <td><button id="add-btn">添加</button></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <button id="save-btn">保存全部规则</button>
+  <span class="status" id="status"></span>
+
+  <script src="options.js"></script>
+</body>
+</html>

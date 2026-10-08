@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <style>
+    body {
+      font-family: "Segoe UI", "Microsoft YaHei", sans-serif;
+      width: 240px; padding: 14px 16px; margin: 0;
+    }
+    .row { display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; }
+    .title { font-size: 14px; font-weight: 600; }
+    .switch { position: relative; width: 40px; height: 22px; }
+    .switch input { display: none; }
+    .slider {
+      position: absolute; inset: 0; border-radius: 22px;
+      background: #ccc; transition: 0.2s; cursor: pointer;
+    }
+    .slider::before {
+      content: ""; position: absolute; width: 18px; height: 18px;
+      left: 2px; top: 2px; border-radius: 50%; background: #fff; transition: 0.2s;
+    }
+    .switch input:checked + .slider { background: #1a73e8; }
+    .switch input:checked + .slider::before { transform: translateX(18px); }
+    button {
+      width: 100%; padding: 7px 0; font-size: 13px; border: none; border-radius: 6px;
+      background: #f0f0f0; cursor: pointer;
+    }
+    button:hover { background: #e4e4e4; }
+  </style>
+</head>
+<body>
+  <div class="row">
+    <span class="title">下载路径助手</span>
+    <label class="switch">
+      <input type="checkbox" id="toggle" />
+      <span class="slider"></span>
+    </label>
+  </div>
+  <button id="open-options">管理规则</button>
+  <script src="popup.js"></script>
+</body>
+</html>
